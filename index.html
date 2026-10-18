@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ta, en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anburaj &amp; Abinaya | Wedding Invitation</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/couple_avatar.png" type="image/png">
+  
+  <!-- Google Fonts: Cormorant Garamond, Great Vibes, Cinzel, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for Wedding & UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Particle & Sparkles Canvas -->
+  <canvas id="sparklesCanvas"></canvas>
+  <!-- Beautiful Romantic Flower Petals Rain Canvas -->
+  <canvas id="flowersCanvas"></canvas>
+
+  <!-- ==============================================
+       1. WELCOME COVER GATEWAY (MODAL AS IN IMAGE 2)
+       ============================================== -->
+  <div id="welcomeGateway" class="welcome-gateway">
+    <div class="gateway-overlay"></div>
+    <div class="gateway-card">
+      <div class="card-glow"></div>
+      <div class="avatar-wrapper">
+        <img src="assets/couple_avatar.png" alt="Anburaj &amp; Abinaya" class="couple-avatar">
+      </div>
+      <p class="gateway-badge">WEDDING INVITATION</p>
+      <h1 class="gateway-couple-title">Anburaj <span class="ampersand">&amp;</span> Abinaya</h1>
+      <p class="gateway-date">December 10, 2026 &bull; Thiruvegampet, Sivaganga</p>
+      <button id="openInvitationBtn" class="btn-open-invitation">
+        <i class="fa-regular fa-envelope-open"></i> OPEN INVITATION
+      </button>
+      <div class="gateway-hint"><i class="fa-solid fa-volume-high"></i> Music will play on opening</div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       MAIN INVITATION CONTAINER (AS IN IMAGE 1)
+       ============================================== -->
+  <main id="mainInvitation" class="invitation-wrapper">
+
+    <!-- Floating Audio Control Widget -->
+    <div class="audio-control-widget">
+      <button id="audioToggleBtn" class="audio-btn" title="Toggle Wedding Music">
+        <div class="music-bars">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+          <span class="bar bar-4"></span>
+        </div>
+        <i class="fa-solid fa-music music-icon"></i>
+        <span class="audio-label" id="audioLabel">Music: ON</span>
+      </button>
+    </div>
+
+    <!-- Floating Quick Actions (Share, Calendar, WhatsApp, Flower Rain) -->
+    <div class="floating-quick-actions">
+       <button id="flowerRainToggleBtn" class="quick-btn active-flower" title="Flower Rain (ON/OFF)">
+        <i class="fa-solid fa-spa"></i>
+      </button>
+      <button id="sharePageBtn" class="quick-btn" title="Share Invitation">
+        <i class="fa-solid fa-share-nodes"></i>
+      </button>
+      <a href="#ceremonySection" class="quick-btn" title="View Ceremony Details">
+        <i class="fa-solid fa-calendar-check"></i>
+      </a>
+      <a href="#wishesSection" class="quick-btn" title="Send Wishes">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <!-- 1. HERO HEADER SECTION -->
+    <header class="hero-section">
+      <div class="ornament-top">
+        <span class="symbol-leaf">❖</span>
+        <span class="symbol-om">|| ஓம் ஸ்ரீ விநாயகர் துணை ||</span>
+        <span class="symbol-leaf">❖</span>
+      </div>
+
+      <p class="sub-header-script">WITH THE DIVINE BLESSINGS OF OUR FAMILIES</p>
+      <p class="sub-header-callout">WE CORDIALLY INVITE YOU TO CELEBRATE THE WEDDING OF</p>
+
+      <div class="couple-title-container">
+        <h1 class="couple-names">Anburaj <span class="gold-amp">&amp;</span> Abinaya</h1>
+      </div>
+
+      <!-- Wedding Date Highlights Box -->
+      <div class="date-capsule-card">
+        <div class="capsule-col">
+          <span class="capsule-label">DAY</span>
+          <span class="capsule-val">Thursday</span>
+        </div>
+        <div class="capsule-divider"></div>
+        <div class="capsule-col highlight">
+          <span class="capsule-label">DATE</span>
+          <span class="capsule-val gold-glow">10 &bull; 12 &bull; 2026</span>
+        </div>
+        <div class="capsule-divider"></div>
+        <div class="capsule-col">
+          <span class="capsule-label">TIME</span>
+          <span class="capsule-val">09:00 AM</span>
+        </div>
+      </div>
+
+      <p class="muhurtham-timing">
+        <i class="fa-regular fa-clock gold-icon"></i> Muhurtham Time: <strong>9.00 AM &ndash; 10.30 AM</strong>
+      </p>
+
+      <div class="scroll-explore">
+        <span>SCROLL TO EXPLORE</span>
+        <i class="fa-solid fa-chevron-down bounce-arrow"></i>
+      </div>
+    </header>
+
+    <!-- 2. COUNTDOWN TIMER SECTION -->
+    <section class="section countdown-section">
+      <div class="section-header-pill">
+        <h2 class="section-title">Counting Down to Forever</h2>
+        <p class="section-subtitle">until we become husband and wife</p>
+      </div>
+
+      <div class="countdown-grid">
+        <div class="countdown-card">
+          <div class="counter-number" id="countdownDays">00</div>
+          <div class="counter-label">DAYS</div>
+        </div>
+        <div class="countdown-card">
+          <div class="counter-number" id="countdownHours">00</div>
+          <div class="counter-label">HOURS</div>
+        </div>
+        <div class="countdown-card">
+          <div class="counter-number" id="countdownMinutes">00</div>
+          <div class="counter-label">MINUTES</div>
+        </div>
+        <div class="countdown-card">
+          <div class="counter-number" id="countdownSeconds">00</div>
+          <div class="counter-label">SECONDS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CORDIAL INVITATION QUOTE CARD -->
+    <section class="section quote-section">
+      <div class="cordial-card">
+        <div class="quote-badge">
+          <i class="fa-solid fa-sparkles"></i> A CORDIAL INVITATION
+        </div>
+        <div class="quote-mark">&ldquo;</div>
+        <blockquote class="invitation-quote">
+          With all our hearts, we cordially invite you and your family to grace the wedding ceremony and bless the newly couple as they begin their beautiful journey together.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 4. WEDDING CEREMONY SECTION (ONLY WEDDING EVENT) -->
+    <section class="section ceremonies-section" id="ceremonySection">
+      <div class="section-header-pill">
+        <span class="badge-mini">CELEBRATE OUR SPECIAL DAY</span>
+        <h2 class="section-title">Wedding Ceremony</h2>
+        <p class="section-subtitle">திருமண முகூர்த்த விழா</p>
+      </div>
+
+      <div class="ceremonies-grid single-ceremony">
+        <!-- Main Grand Wedding Ceremony Card -->
+        <article class="ceremony-card highlight-ceremony grand-card">
+          <div class="event-meta-tags">
+            <span class="event-tag main-tag"><i class="fa-solid fa-heart"></i> WEDDING DAY</span>
+            <span class="event-tag date-tag"><i class="fa-regular fa-calendar"></i> 10 DEC 2026 (Thursday)</span>
+          </div>
+
+          <h3 class="event-title">Wedding Ceremony (முகூர்த்தம்)</h3>
+
+          <div class="event-detail-item">
+            <i class="fa-regular fa-clock event-icon"></i>
+            <div>
+              <strong>Muhurtham Time:</strong> 9:00 AM &ndash; 10:30 AM
+            </div>
+          </div>
+
+          <div class="event-detail-item">
+            <i class="fa-solid fa-location-dot event-icon"></i>
+            <div>
+              <strong>Venue:</strong> சிவன் கோவில் (Sivan Temple),<br>
+              திருவேகம்பத்து, சிவகங்கை (Thiruvegampet, Sivaganga), Tamil Nadu
+            </div>
+          </div>
+
+          <div class="card-action-buttons">
+            <a href="https://www.google.com/maps/place/%E0%AE%B5%E0%AF%88%E0%AE%B0+%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AF%81%E0%AE%AE%E0%AE%A3+%E0%AE%AE%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%AA%E0%AE%AE%E0%AF%8D+%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AF%81%E0%AE%B5%E0%AF%87%E0%AE%95%E0%AE%AE%E0%AF%8D%E0%AE%AA%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81/@9.8317012,78.7812861,17z/data=!3m1!4b1!4m6!3m5!1s0x3b00510011673651:0xa6c01015cb7fc56e!8m2!3d9.8316959!4d78.783861!16s%2Fg%2F11w3jhrhyj" target="_blank" rel="noopener noreferrer" class="btn-action btn-gold">
+              <i class="fa-solid fa-location-arrow"></i> Open Maps
+            </a>
+            <button class="btn-action btn-outline add-cal-btn" data-title="Wedding Ceremony (Muhurtham) - Anburaj & Abinaya" data-desc="Wedding Ceremony of Anburaj and Abinaya. Muhurtham: 9:00 AM - 10:30 AM at Sivan Temple, Thiruvegampet, Sivaganga, Tamil Nadu" data-venue="Sivan Temple, Thiruvegampet, Sivaganga, Tamil Nadu" data-start="2026-12-10T09:00:00" data-end="2026-12-10T10:30:00">
+              <i class="fa-regular fa-calendar-plus"></i> Add to Cal
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. FAMILY & RELATIVES SECTION -->
+    <section class="section family-section">
+      <div class="section-header-pill">
+        <span class="badge-mini">WITH WARM REGARDS</span>
+        <h2 class="section-title">Family &amp; Relatives</h2>
+      </div>
+
+      <div class="family-grid">
+        <!-- Groom's Family Card -->
+        <div class="family-card">
+          <div class="family-icon-circle">
+            <i class="fa-solid fa-house-chimney-window"></i>
+          </div>
+          <h3 class="family-title">Groom's Family</h3>
+          <ul class="family-members-list">
+            <li><span class="role">Groom:</span> Anburaj</li>
+            <li><span class="role">Father:</span> Mr. Malaikkannu</li>
+            <li><span class="role">Mother:</span> Mrs. Sangamuthu</li>
+            <li class="warm-note">&amp; Near and Dear Relatives</li>
+          </ul>
+        </div>
+
+        <!-- Bride's Family Card -->
+        <div class="family-card">
+          <div class="family-icon-circle">
+            <i class="fa-solid fa-ring"></i>
+          </div>
+          <h3 class="family-title">Bride's Family</h3>
+          <ul class="family-members-list">
+            <li><span class="role">Bride:</span> Abinaya</li>
+            <li><span class="role">Father:</span> Mr. Chandra Sekar</li>
+            <li><span class="role">Mother:</span> Mrs. Manjula</li>
+            <li><span class="role">Brother:</span> Arun Kumar C</li>
+            <li><span class="role">Sister:</span> Anu C</li>
+            <li class="warm-note">&amp; Near and Dear Relatives</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 7. WISHES VIA WHATSAPP SECTION -->
+    <section class="section wishes-section" id="wishesSection">
+      <div class="section-header-pill">
+        <span class="badge-mini">SEND YOUR BLESSINGS</span>
+        <h2 class="section-title">Wishes via WhatsApp</h2>
+        <p class="section-subtitle">Send your heartfelt congratulations directly to WhatsApp</p>
+      </div>
+
+      <div class="wishes-card">
+        <form id="wishesForm" class="wishes-form" onsubmit="event.preventDefault(); sendWhatsAppBlessings();">
+          <div class="form-group">
+            <label for="guestName">YOUR NAME</label>
+            <input type="text" id="guestName" class="form-input" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="guestMessage">YOUR BLESSINGS / MESSAGE</label>
+            <textarea id="guestMessage" class="form-textarea" rows="3" placeholder="Wishing Anburaj & Abinaya a lifetime of endless happiness and bliss..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-whatsapp-send">
+            <i class="fa-brands fa-whatsapp"></i> SEND BLESSINGS ON WHATSAPP
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 8. FOOTER SECTION -->
+    <footer class="footer-section">
+      <div class="footer-couple-name">Anburaj <span class="footer-heart">&hearts;</span> Abinaya</div>
+      <p class="footer-date">December 10, 2026 &bull; Sivan Temple, Thiruvegampet, Sivaganga</p>
+      <div class="footer-ornament">❖ ✤ ❖</div>
+      <p class="footer-credits">With divine blessings &amp; love from our families</p>
+    </footer>
+
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="photoLightbox" class="lightbox-modal">
+    <button class="lightbox-close" id="lightboxCloseBtn">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Enlarged photo">
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Audio Element (Traditional Shenai & Wedding Instrumental Melody) -->
+  <audio id="weddingBgm" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_c8907865c3.mp3?filename=indian-flute-112185.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Canvas Confetti Library for Celebration Bursts -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
